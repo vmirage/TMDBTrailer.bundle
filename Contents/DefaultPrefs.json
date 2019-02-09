@@ -34,5 +34,12 @@
 		"label": "Add Deleted Scenes",
 		"type": "bool",
 		"default": "false"
+	},
+	{
+		"id": "tmdb_api_key",
+		"type": "text",
+		"label": "The Movie Database API Key (v3 auth)",
+		"default": "",
+		"secure": "false"
 	}
 ]

@@ -1,47 +1,34 @@
-**This agent is no longer maintained and its backend APIs have been taken offline**
-
-Trailer Addict
+The Movie Database Trailer
 ==============
-<img src="https://img.shields.io/github/release/piplongrun/TrailerAddict.bundle.png?style=flat-square">
+<img src="https://img.shields.io/github/release/vmirage/TMDBTrailer.bundle.png?style=flat-square">
 
-What is Trailer Addict?
+What is The Movie Database Trailer?
 -----------------------
-Trailer Addict is a metadata agent for Plex Media Server that tries to find trailers, interviews and behind the scenes videos for your movie library.
+The Movie Database Trailer is a metadata agent for Plex Media Server that tries to find trailers, interviews and behind the scenes videos for your movie library. It is forked from Trailer Addict metadata agent after Trailer Addict's backend and API was taken offline.
 
 Requirements
 ------------
 A Plex movie library with the _Plex Movie_ agent or _The Movie Database_ agent set as primary agent.
 
-How do I install Trailer Addict?
+How do I install The Movie Database Trailer?
 --------------------------------
-You can install Trailer Addict:
+You can install The Movie Database Trailer:
 
  - From within the Unsupported AppStore, or:
  - Manually: See the support article "[How do I manually install a channel?](https://support.plex.tv/hc/en-us/articles/201187656-How-do-I-manually-install-a-channel-)" over at the Plex support website.
 
 After installation:
 
-1. Activate the agent in *Settings* > *Server* > *Agents*.
-2. Use the *Refresh All* option on your library to let the agent collect and add trailers.
+1. Create The Movie Database API Key (https://developers.themoviedb.org/3/getting-started/introduction).
+2. Activate the agent in *Settings* > *Server* > *Agents*.
+3. Configure The Movie Database Trailer agent settings and set the API Key (v3 auth) you have obtained from The Movie Database.
+4. Use the *Refresh All* option on your library to let the agent collect and add trailers.
 
-Where do I download Trailer Addict?
+Where do I download The Movie Database Trailer?
 -----------------------------------
-If you want to install the agent manually or if you are interested in the source code, you can download the latest copy of the agent from Github: [releases](https://github.com/piplongrun/TrailerAddict.bundle/releases)
+If you want to install the agent manually or if you are interested in the source code, you can download the latest copy of the agent from Github: [releases](https://github.com/vmirage/TMDBTrailer.bundle/releases)
 
-Limitations and Known Issues
-----------------------------
- - Due to not being able to grab certain data directly I had to build a small API that converts IMDb ids to Trailer Addict ids. This API is still a bit slow due to a number of http requests it has to do. Lots of requests are cached, so the more the agent gets used, the faster it will become.
- - The source website does not offer preview images for the videos.
 
-Where do I report issues?
--------------------------
-Create an [issue on Github](https://github.com/piplongrun/TrailerAddict.bundle/issues) and add as much information as possible:
- - Plex Media Server version
- - Primary agent and order of any secondary agents
- - Log files, `com.plexapp.agents.traileraddict.log`
 
-<img src="https://raw.githubusercontent.com/piplongrun/TrailerAddict.bundle/master/Contents/Resources/icon-default.jpg" width="150">
+<img src="https://raw.githubusercontent.com/vmirage/TMDBTrailer.bundle/master/Contents/Resources/icon-default.jpg" width="150">
 
-If you like my work,... I like beer :)
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3PYFHYXLR77S4)
