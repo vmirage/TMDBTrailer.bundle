@@ -61,11 +61,11 @@ class TMDBTrailerAgent(Agent.Movies):
 			poster = IMAGE_URL % (result[u'key'])
 
 			# Trailers
-			if 'trailer' in title.lower() and Prefs['add_trailers']:
+			if ('trailer' in title.lower() or result[u'type'].lower() == 'trailer' or result[u'type'].lower() == 'teaser' or result[u'type'].lower() == 'clip') and Prefs['add_trailers']:
 				extra_type = 'trailer'
 
 			# Behind the scenes / Featurette
-			elif ('behind the scenes' in title.lower() or 'featurette' in title.lower()) and Prefs['add_featurettes']:
+			elif ('behind the scenes' in title.lower() or 'featurette' in title.lower()  or result[u'type'].lower() == 'featurette') and Prefs['add_featurettes']:
 				extra_type = 'behind_the_scenes'
 
 			# Interview
