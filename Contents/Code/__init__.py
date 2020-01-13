@@ -1,8 +1,8 @@
 import certifi
 import requests
 
-VERSION = '4.0'
-API_URL = 'http://api.themoviedb.org/3/movie/%s/videos?api_key=%s'
+VERSION = '4.1'
+API_URL = 'http://api.themoviedb.org/3/movie/%s/videos?api_key=%s&language=%s'
 VIDEO_URL = 'http://www.youtube.com/watch?v=%s'
 IMAGE_URL = 'https://img.youtube.com/vi/%s/maxresdefault.jpg'
 
@@ -22,6 +22,9 @@ HTTP_HEADERS = {
 def Start():
 
 	pass
+
+def GetLanguage():
+    return Prefs['language'].split('/')[1]
 
 ####################################################################################################
 class TMDBTrailerAgent(Agent.Movies):
@@ -43,7 +46,7 @@ class TMDBTrailerAgent(Agent.Movies):
 
 	def update(self, metadata, media, lang):
 
-		r = requests.get(API_URL % (metadata.id, Prefs['tmdb_api_key']), headers=HTTP_HEADERS, verify=certifi.where())
+		r = requests.get(API_URL % (metadata.id, Prefs['tmdb_api_key'], GetLanguage()), headers=HTTP_HEADERS, verify=certifi.where())
 
 		if 'status_message' in r.json():
 			Log("*** An error occurred: %s ***" % (r.json()['status_message']))
