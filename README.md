@@ -23,6 +23,7 @@ After installation:
 2. Activate the agent in *Settings* > *Server* > *Agents*.
 3. Configure The Movie Database Trailer agent settings and set the API Key (v3 auth) you have obtained from The Movie Database.
 4. Use the *Refresh All* option on your library to let the agent collect and add trailers.
+5. (Optional) Install a better [YouTube plugin](https://github.com/kolsys/YouTubeTV.bundle) if you encounter problems playing trailer.
 
 Where do I download The Movie Database Trailer?
 -----------------------------------
