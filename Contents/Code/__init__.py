@@ -1,7 +1,7 @@
 import certifi
 import requests
 
-VERSION = '4.1'
+VERSION = '4.2'
 API_URL = 'http://api.themoviedb.org/3/movie/%s/videos?api_key=%s&language=%s'
 VIDEO_URL = 'http://www.youtube.com/watch?v=%s'
 IMAGE_URL = 'https://img.youtube.com/vi/%s/maxresdefault.jpg'
@@ -64,7 +64,7 @@ class TMDBTrailerAgent(Agent.Movies):
 			poster = IMAGE_URL % (result[u'key'])
 
 			# Trailers
-			if ('trailer' in title.lower() or result[u'type'].lower() == 'trailer' or result[u'type'].lower() == 'teaser' or result[u'type'].lower() == 'clip') and Prefs['add_trailers']:
+			if (result[u'type'].lower() == 'trailer') and Prefs['add_trailers']:
 				extra_type = 'trailer'
 
 			# Behind the scenes / Featurette
